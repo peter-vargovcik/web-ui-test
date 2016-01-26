@@ -5,16 +5,31 @@
     <title>Title</title>
     <script type="application/javascript" src="bower_components/jquery/dist/jquery.js"></script>
     <script type="application/javascript">
-        function myFunction(){
-            var name = $('#name').val();
-            alert(name);
-        }
+
+        $(document).ready(function(){
+
+            $("#trigger").click(function(event){
+                var name = $('#name').val();
+
+                console.log(name);
+                console.log($('input[name=name]'));
+                var h1 = $('<h1>');
+                h1.append(name);
+                $('body').append(h1);
+                event.preventDefault();
+            });
+        });
     </script>
 </head>
 <body>
-<label for="name">Name</label>
-<input id="name" type="name" name="name">
-<button onclick="myFunction()">Click me</button>
+
+    <form>
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name">
+        <button id="trigger" >Click me</button>
+    </form>
+
+    <h1>The H1</h1>
 
 </body>
 </html>
