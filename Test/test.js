@@ -1,7 +1,7 @@
 /**
  * Created by PeterVargovcik on 25/01/2016.
  */
-casper.start('C:\\Users\\PeterVargovcik\\Documents\\BuildTestTeamCity\\web-ui-test\\index.html', function () {
+casper.start('index.html', function () {
     this.test.assertExists('input[name=name]');
     this.capture('FirstPage.png');
 })
